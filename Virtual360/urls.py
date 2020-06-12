@@ -23,5 +23,6 @@ admin.site.site_title = "Virtual 360 Admin Portal"
 admin.site.index_title = "Welcome to Virtual 360"
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('user/', include('Mainapp.urls'))
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

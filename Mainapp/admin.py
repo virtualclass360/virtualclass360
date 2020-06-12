@@ -20,7 +20,7 @@ admin.site.register(Intrest_Sub_Category,Intrest_Sub_Categoryadminmodel)
 
 
 class Usersadminmodel(admin.ModelAdmin):
-  list_display = ("Users_Name","Users_Email","Users_Password","Users_Current_Plan","Users_Join_Date","Is_User_Active")
+  list_display = ("Users_Email","Users_Name","Users_Password","Users_Current_Plan","Users_Join_Date","Is_User_Active")
   list_filter = ("Intrest_Category","Is_User_Active","Users_Current_Plan")
   search_fields = ["Users_Name","Users_Email"]
 admin.site.register(Users,Usersadminmodel)

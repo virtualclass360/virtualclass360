@@ -23,7 +23,7 @@ class Intrest_Category(models.Model):
         return self.Category_Name
 
     class Meta:
-        verbose_name = "Interst Category"
+        verbose_name = "Intrest Category"
 
 
 class Intrest_Sub_Category(models.Model):
@@ -35,17 +35,18 @@ class Intrest_Sub_Category(models.Model):
         return self.Sub_Category_Name
 
     class Meta:
-        verbose_name = "Interst Sub Category"
+        verbose_name = "Intrest Sub Category"
 
 
 class Users(models.Model):
-    Users_Name=models.CharField(max_length=100)
-    Users_Email=models.CharField(max_length=100,unique=True)
+    Users_Email = models.CharField(max_length=100, unique=True)
+    Users_Name=models.CharField(max_length=100,default="")
+
     Users_Password=models.CharField(max_length=100)
     Users_Join_Date=models.DateTimeField(auto_now_add=True)
     Is_User_Active=models.BooleanField("Is User Active",default=True)
     Users_Current_Plan=models.ForeignKey(Plans,on_delete=models.CASCADE,null=True)
-    Intrest_Category=models.ManyToManyField(Intrest_Category)
+    Intrest_Category=models.ManyToManyField(Intrest_Category,default="")
 
     def __str__(self):
         return self.Users_Name
