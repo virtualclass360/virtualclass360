@@ -20,7 +20,7 @@ def is_user_email_exist(email):
 
 
 #Register User
-@api_view(["PUT"])
+@api_view(["POST"])
 def Register(request):
     apiresponse= {}
     #Getting The Comming Request
